@@ -1,0 +1,16 @@
+{
+  "name": "standalone-chat",
+  "version": "1.0.0",
+  "description": "Standalone password-protected chat website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  }
+}
