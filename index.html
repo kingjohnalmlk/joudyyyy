@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>شات</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-card">
+      <button class="theme-float" id="themeBtnCard" title="وضع ليلي/نهاري">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <div class="login-icon-circle"><i class="fas fa-lock"></i></div>
+      <div class="login-title">ادخل عشان تفتح الشات</div>
+      <div class="login-subtitle">اكتب اسمك وكلمة السر عشان تكمل</div>
+      <div class="login-field-wrap">
+        <input type="text" class="login-field" id="loginName" placeholder="اسمك" autocomplete="off" />
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="login-field-wrap">
+        <input type="password" class="login-field" id="loginPassword" placeholder="كلمة السر" autocomplete="off" />
+        <i class="fas fa-key"></i>
+      </div>
+      <button class="login-btn" id="loginBtn">
+        <span>ادخل</span>
+        <i class="fas fa-arrow-right-to-bracket"></i>
+      </button>
+      <div class="login-error" id="loginError"></div>
+      <button class="login-notif-btn" id="notifBtn">
+        <i class="fas fa-bell"></i>
+        <span>فعّل التنبيهات</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="chat-container" id="chatContainer" style="display:none;">
+    <div class="floating-nav">
+      <div class="floating-nav-right">
+        <button class="float-btn" id="logoutBtn" title="تسجيل الخروج">
+          <i class="fas fa-right-from-bracket"></i>
+        </button>
+        <button class="float-btn" id="chatNotifBtn" title="فعّل التنبيهات">
+          <i class="fas fa-bell"></i>
+        </button>
+        <button class="float-btn theme-header-btn" id="themeBtnChat" title="وضع ليلي/نهاري">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="float-btn clear-chat-btn" id="clearChatBtn" title="مسح كل الرسايل" style="display:none;">
+          <i class="fas fa-trash-can"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="chat-messages-area" id="chatBody"></div>
+
+    <div class="chat-input-bar">
+      <div class="recording-bar" id="recBar">
+        <div class="rec-pulse"></div>
+        <span class="rec-timer" id="recTimer">0:00</span>
+        <button class="rec-cancel" id="recCancel" title="إلغاء"><i class="fas fa-times"></i></button>
+        <button class="rec-send" id="recSend" title="إرسال"><i class="fas fa-check"></i></button>
+      </div>
+      <div class="file-preview" id="filePreview">
+        <i class="fas fa-paperclip"></i>
+        <span id="filePreviewName"></span>
+        <button id="filePreviewRemove" title="إزالة"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chat-input-row">
+        <div class="attach-menu">
+          <button class="icon-btn" id="attachBtn" title="إرفاق">
+            <i class="fas fa-paperclip"></i>
+          </button>
+          <div class="attach-options" id="attachOptions">
+            <button class="attach-option" id="fileBtn">
+              <i class="fas fa-folder-open"></i>
+              <span>إرسال ملف</span>
+            </button>
+            <button class="attach-option" id="micBtn">
+              <i class="fas fa-microphone"></i>
+              <span>تسجيل صوت</span>
+            </button>
+          </div>
+        </div>
+        <input type="text" id="chatTextInput" placeholder="اكتب رسالتك هنا..." />
+        <button class="chat-send-btn" id="chatSendBtn" title="إرسال">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="fileInput" />
+
+  <script src="client-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

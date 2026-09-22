@@ -1,7 +1,6 @@
 {
   "rewrites": [
-    { "source": "/client-config.js", "destination": "/api/client-config" },
-    { "source": "/api/messages", "destination": "/api/messages" }
+    { "source": "/client-config.js", "destination": "/api/client-config" }
   ],
   "headers": [
     {
